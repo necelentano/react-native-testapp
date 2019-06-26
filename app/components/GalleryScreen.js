@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {StyleSheet, FlatList, ActivityIndicator, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, FlatList, ActivityIndicator, View } from 'react-native';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {fetchImages} from '../store/actions/fetchImagesAction';
+import { fetchImages } from '../store/actions/fetchImagesAction';
 
 import ListItem from './ListItem'
 
@@ -20,7 +20,8 @@ class GalleryScreen extends Component {
     _keyExtractor = (item) => item.id;
 
     _renderItem = ({item}) => (
-        < ListItem id = {item.id}
+        < ListItem 
+              id = {item.id}
               thumbnailUrl = {item.urls.small}
               regularUrl = {item.urls.regular}
               authorName = {item.user.name}
@@ -28,7 +29,8 @@ class GalleryScreen extends Component {
     );
 
     goToImageScreen = (regularUrl) => {
-        return this.props.navigation.navigate('Image', {regularUrl: regularUrl})
+        const { navigate } = this.props.navigation;
+        return navigate('Image', { regularUrl })
     }
 
     render() {
@@ -64,6 +66,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {
-    fetchImages
-})(GalleryScreen)
+export default connect(mapStateToProps, { fetchImages })(GalleryScreen)
