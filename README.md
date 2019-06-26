@@ -28,3 +28,9 @@
 * компоненты высшего порядка (High Order Components)
 * render props
 * ref
+
+## Screenshots
+
+![GalleryScreen](https://user-images.githubusercontent.com/20335885/60186510-9bbbac80-9834-11e9-8a57-b302401601a1.jpg)
+
+![ImageScreen](https://user-images.githubusercontent.com/20335885/60186541-ae35e600-9834-11e9-9795-22e8d494dd70.jpg)
